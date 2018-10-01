@@ -10,60 +10,60 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    int[] state={2, 2, 2, 2, 2, 2, 2, 2, 2};
+    int[] state={0, 0, 0, 0, 0, 0, 0, 0, 0};
     int activePlayer=0;
     int flag=0,cnt=0,fall=0;
     public void onclick(View view)
     {
-        if(state[0]!=2)
+        if(state[0]!=0)
         {
             ImageView a1 = (ImageView) findViewById(R.id.imageView1);
             a1.setImageResource(R.drawable.white);
         }
 
-        if(state[1]!=2)
+        if(state[1]!=0)
         {
             ImageView a1 = (ImageView) findViewById(R.id.imageView2);
             a1.setImageResource(R.drawable.white);
         }
 
-        if(state[2]!=2)
+        if(state[2]!=0)
         {
             ImageView a1 = (ImageView) findViewById(R.id.imageView3);
             a1.setImageResource(R.drawable.white);
         }
 
-        if(state[3]!=2)
+        if(state[3]!=0)
         {
             ImageView a1 = (ImageView) findViewById(R.id.imageView4);
             a1.setImageResource(R.drawable.white);
         }
 
-        if(state[4]!=2)
+        if(state[4]!=0)
         {
             ImageView a1 = (ImageView) findViewById(R.id.imageView5);
             a1.setImageResource(R.drawable.white);
         }
 
-        if(state[5]!=2)
+        if(state[5]!=0)
         {
             ImageView a1 = (ImageView) findViewById(R.id.imageView6);
             a1.setImageResource(R.drawable.white);
         }
 
-        if(state[6]!=2)
+        if(state[6]!=0)
         {
             ImageView a1 = (ImageView) findViewById(R.id.imageView7);
             a1.setImageResource(R.drawable.white);
         }
 
-        if(state[7]!=2)
+        if(state[7]!=0)
         {
             ImageView a1 = (ImageView) findViewById(R.id.imageView8);
             a1.setImageResource(R.drawable.white);
         }
 
-        if(state[8]!=2)
+        if(state[8]!=0)
         {
             ImageView a1 = (ImageView) findViewById(R.id.imageView9);
             a1.setImageResource(R.drawable.white);
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         button.animate().translationYBy(-1000);
         for(int i=0;i<9;i++)
         {
-            state[i]=2;
+            state[i]=0;
         }
         activePlayer=0;
         flag=0;
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         ImageView counter = (ImageView) view;
         int tappedCounter=Integer.parseInt(counter.getTag().toString());
 
-        if(state[tappedCounter]==2&&flag==0)
+        if(state[tappedCounter]==0&&flag==0)
         {
             counter.setTranslationY(-1500);
             if (activePlayer == 0)
@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
             int i;
             for(i=0;i<3;i++)
             {
-                if (state[i] == state[i + 3] && state[i + 3] == state[i + 6] && state[i] != 2)
+                if (state[i] == state[i + 3] && state[i + 3] == state[i + 6] && state[i] != 0)
                 {
                     Toast.makeText(this, "Player " + (state[i] + 1) + " is the winner!", Toast.LENGTH_SHORT).show();
                     flag=1;
@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
             if(flag==0)
             {
                 for(i=0;i<7;i+=3)
-                    if (state[i]==state[i+1]&&state[i+1]==state[i+2]&&state[i]!=2)
+                    if (state[i]==state[i+1]&&state[i+1]==state[i+2]&&state[i]!=0)
                     {
                         Toast.makeText(this, "Player " + (state[i] + 1) + " is the winner!", Toast.LENGTH_SHORT).show();
                         flag=1;
@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
             }
             if(flag==0)
             {
-                if(state[0]==state[4]&&state[4]==state[8]&&state[0]!=2)
+                if(state[0]==state[4]&&state[4]==state[8]&&state[0]!=0)
                 {
                     Toast.makeText(this, "Player " + (activePlayer + 1) + " is the winner!", Toast.LENGTH_SHORT).show();
                     flag = 1;
