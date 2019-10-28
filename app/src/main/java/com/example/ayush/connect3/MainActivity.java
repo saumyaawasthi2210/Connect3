@@ -164,9 +164,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button button= (Button) findViewById(R.id.button);
-        button.animate().translationYBy(-1000);
+        button.animate().translationYBy(-1100);
     }
 }
-
-
-// sec 1l bro 50 token 10
